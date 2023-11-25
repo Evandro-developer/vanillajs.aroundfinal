@@ -1,0 +1,40 @@
+.profile {
+  width: 880px;
+  min-width: 320px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 0 46px;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 900px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .profile {
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 26px;
+    padding: 36px 0;
+  }
+}
+
+@media (max-width: 608px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .profile {
+    padding: 24px 0 36px;
+    align-items: center;
+    justify-content: center;
+  }
+}

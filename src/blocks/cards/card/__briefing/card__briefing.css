@@ -1,0 +1,10 @@
+.card__briefing {
+  width: 100%;
+  max-height: 79px;
+  margin: 0;
+  padding: 26px 15px 31px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}

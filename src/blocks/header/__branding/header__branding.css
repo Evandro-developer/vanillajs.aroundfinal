@@ -1,0 +1,27 @@
+.header__branding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .header__branding {
+    gap: 26px;
+  }
+}
+
+@media (max-width: 608px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .header__branding {
+    gap: 18px;
+    padding: 0 0 16px 0;
+  }
+}

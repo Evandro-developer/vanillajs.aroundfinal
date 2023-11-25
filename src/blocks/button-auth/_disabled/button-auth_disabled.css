@@ -1,0 +1,14 @@
+.button-auth_disabled {
+  background-color: #545454;
+  cursor: default;
+  color: #000000;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+
+.button-auth_disabled:hover {
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+}

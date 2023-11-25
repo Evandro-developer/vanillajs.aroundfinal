@@ -1,0 +1,28 @@
+* {
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.popup__input_type_error {
+  display: block;
+  padding: 6px 0;
+  margin: 0;
+  color: rgba(255, 0, 0);
+}
+
+.popup__input_type_error:focus {
+  border-bottom-color: rgba(255, 0, 0);
+  opacity: 1;
+}
+
+.popup__input_type_error:hover {
+  border-bottom-color: rgba(255, 0, 0);
+  opacity: 1;
+}
+
+.popup__input_type_error:valid {
+  border-bottom-color: #545454;
+  opacity: 1;
+}

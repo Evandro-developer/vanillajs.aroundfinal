@@ -1,0 +1,26 @@
+.footer__author {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+@media (max-width: 608px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .footer__author {
+    gap: 8px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.footer__author:hover ~ .footer__linkedin-icon .background,
+.footer__author:hover ~ .footer__linkedin-icon .icon-color {
+  fill: #fff;
+}

@@ -1,0 +1,21 @@
+.root {
+  max-width: 880px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease-in-out;
+}
+
+@media (max-width: 608px) {
+  * {
+    transition: 0.4s ease-in-out;
+  }
+  .root {
+    max-width: 320px;
+  }
+}

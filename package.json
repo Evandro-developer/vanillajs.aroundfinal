@@ -1,0 +1,71 @@
+{
+  "name": "vanillajs.aroundfinal",
+  "version": "1.0.0",
+  "repository": {
+    "url": "git+https://github.com/Evandro-developer/vanillajs.aroundfinal.git"
+  },
+  "homepage": "https://vanillajs.aroundfinal.com.br",
+  "description": "vanillajs.aroundfinal frontend application.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [
+    "VanillaJS",
+    "JavaScript",
+    "webapp",
+    "interactive",
+    "user-experience",
+    "responsive",
+    "frontend",
+    "user-friendly",
+    "UX",
+    "API-integration",
+    "authentication",
+    "JWT",
+    "travel",
+    "tourism",
+    "USA",
+    "exploration",
+    "geolocation",
+    "real-time",
+    "customization",
+    "internationalization",
+    "localization",
+    "open-source",
+    "user-interface",
+    "UI",
+    "single-page-application",
+    "SPA",
+    "Webpack"
+  ],
+  "author": "Evandro M Oliveira",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "@babel/preset-env": "^7.21.5",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "cssnano": "^6.0.1",
+    "file-loader": "^6.2.0",
+    "gh-pages": "^6.0.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss-loader": "^7.3.0",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "core-js": "^3.30.2",
+    "jquery": "^3.7.0"
+  }
+}

@@ -1,0 +1,30 @@
+* {
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.auth-container__input {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  border: none;
+  background-color: #000;
+  width: 100%;
+  height: 36px;
+  border-bottom: 1px solid #545454;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.auth-container__input::placeholder {
+  color: #ffffff;
+  opacity: 0.5;
+}
+
+.auth-container__input:valid {
+  border-bottom-color: #545454;
+  color: #ffffff;
+}

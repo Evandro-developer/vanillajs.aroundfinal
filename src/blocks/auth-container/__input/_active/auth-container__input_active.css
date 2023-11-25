@@ -1,0 +1,24 @@
+* {
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  pointer-events: auto;
+}
+
+.auth-container__input_active {
+  border-bottom-color: #fff;
+}
+
+.auth-container__input_active:focus {
+  border-bottom-color: #fff;
+}
+
+.auth-container__input_active:hover {
+  border-bottom-color: #fff;
+  opacity: 0.4;
+}
+
+.auth-container__input_active:valid {
+  border-bottom-color: #fff;
+}

@@ -1,0 +1,11 @@
+.button-heart-icon {
+  width: 21px;
+  height: 19px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.button-heart-icon:hover {
+  transition: 0.3s ease-in-out;
+  opacity: 0.6;
+}

@@ -1,0 +1,32 @@
+.auth-container__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding-top: 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.auth-container__link:hover {
+  transition: 0.3s ease-in-out;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .auth-container__link {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

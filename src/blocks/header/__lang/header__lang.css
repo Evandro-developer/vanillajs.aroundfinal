@@ -1,0 +1,21 @@
+.header__lang {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+  opacity: 1;
+}
+
+.header__lang.selected {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.header__lang:hover {
+  transition: 0.3s ease-in-out;
+  opacity: 0.6;
+}
+
+.header__lang:not(.selected):hover {
+  opacity: 0.6;
+}

@@ -1,0 +1,35 @@
+.profile__subtitle {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 513px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s ease-in-out;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .profile__subtitle {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 608px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .profile__subtitle {
+    max-width: 243px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

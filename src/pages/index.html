@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Projeto 17: Website Responsivo utilizando React, Node.js, Webpack e Babel para desenvolvimento full stack.">
+  <meta name="keywords" content="HTML, CSS & JavaScript" />
+  <meta name="author" content="Evandro M Oliveira" />
+  <meta property="og:image" content="<%= require('../images/javascript-original.svg')%>" />
+  <meta property="og:image:type" content="image/svg" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="430" />
+  <link rel="icon" href="<%= require(`../images/javascript-original.svg`)%>" type="image/svg" />
+  <title>Around The U.S.</title>
+</head>
+
+<body>
+  <div id="page" class="page">
+    <div id="root" class="root">
+      <header class="header"></header>
+      <main>
+        <section class="profile">
+          <div class="profile__container">
+            <div class="profile__avatar-edit" id="profile__avatar-edit">
+              <picture>
+                <img src="#" alt="#" class="profile__avatar" id="profile__avatar"
+                  data-translate="profile.avatarImage" />
+              </picture>
+              <picture>
+                <img src="<%= require(`../images/button_update_avatar.svg`)%>" alt="#"
+                  data-translate="profile.editBtnImage" class="button-avatar-edit" id="button-avatar-edit" />
+              </picture>
+            </div>
+            <div class="profile__briefing">
+              <h1 class="profile__title"></h1>
+              <h2 class="profile__subtitle"></h2>
+              <picture>
+                <source media="(max-width: 608px)" srcset="<%= require(`../images/button_edit_small.svg`)%>" />
+                <img class="button-edit" src="<%= require(`../images/button_edit.svg`)%>" alt="#"
+                  data-translate="profile.btnImage" id="button-edit" />
+              </picture>
+            </div>
+          </div>
+          <picture>
+            <source media="(max-width: 608px)" srcset="<%= require(`../images/button_add_large.svg`)%>" />
+            <img src="<%= require(`../images/button_add.svg`)%>" alt="#" class="button-add" id="button-add"
+              data-translate="profile.addBtnImage" />
+          </picture>
+        </section>
+        <section class="popup" id="popup">
+          <form class="popup__form" id="popup__form" novalidate>
+            <picture>
+              <source media="(max-width: 580px)" srcset="<%= require(`../images/close_icon_small.svg`)%>" />
+              <img src="<%= require(`../images/close_icon.svg`)%>" alt="#" class="popup__closed-btn"
+                id="popup__closed-btn" data-translate="common.closeIcon" />
+            </picture>
+            <h2 class="popup__heading" id="popup__heading_profile"></h2>
+            <label class="popup__field">
+              <input type="text" name="name" class="popup__input popup__input_type_name" id="popup-input-type-name"
+                required minlength="2" maxlength="40" />
+              <span class="popup__input-error popup-input-type-name-error"></span>
+            </label>
+            <label class="popup__field">
+              <input type="text" name="about" class="popup__input popup__input_type_job" id="popup-input-type-job"
+                required minlength="2" maxlength="200" />
+              <span class="popup__input-error popup-input-type-job-error"></span>
+            </label>
+            <button type="submit" class="popup__button" id="popup__button"></button>
+          </form>
+        </section>
+        <section class="popup popup_avatar-edit" id="popup_avatar-edit">
+          <form class="popup__form popup__form_avatar-edit" id="popup__form_avatar-edit" novalidate>
+            <picture>
+              <source media="(max-width: 580px)" srcset="<%= require(`../images/close_icon_small.svg`)%>" />
+              <img src="<%= require(`../images/close_icon.svg`)%>" alt="#"
+                class="popup__closed-btn popup__closed-btn_avatar-edit" id="popup_avatar-edit__closed-btn"
+                data-translate="common.closeIcon" />
+            </picture>
+            <h2 class="popup__heading popup__heading_avatar-edit" id="popup__heading_avatar-edit"></h2>
+            <label class="popup__field">
+              <input type="url" name="avatar" class="popup__input popup__input_type_avatar-img-link"
+                id="popup-input-type-avatar-img-link" required pattern="https?://.+" />
+              <span class="popup__input-error popup-input-type-avatar-img-link-error"></span>
+            </label>
+            <button type="submit" class="popup__button popup__button_avatar-edit"
+              id="popup__button_avatar-edit"></button>
+          </form>
+        </section>
+        <section class="popup popup_card-add" id="popup_card-add">
+          <form class="popup__form popup__form_card-add" id="popup__form_card-add" novalidate>
+            <picture>
+              <source media="(max-width: 580px)" srcset="<%= require(`../images/close_icon_small.svg`)%>" />
+              <img src="<%= require(`../images/close_icon.svg`)%>" alt="#"
+                class="popup__closed-btn popup__closed-btn_card-add" id="popup_card-add__closed-btn"
+                data-translate="common.closeIcon" />
+            </picture>
+            <h2 class="popup__heading popup__heading_card-add" id="popup__heading_card-add"></h2>
+            <label class="popup__field">
+              <input type="text" name="placeName" class="popup__input popup__input_type_place"
+                id="popup-input-type-place" required minlength="2" maxlength="30" />
+              <span class="popup__input-error popup-input-type-place-error"></span>
+            </label>
+            <label class="popup__field">
+              <input type="url" name="link" class="popup__input popup__input_type_img-link"
+                id="popup-input-type-img-link" required pattern="https?://.+" />
+              <span class="popup__input-error popup-input-type-img-link-error"></span>
+            </label>
+            <button type="submit" class="popup__button popup__button_card-add" id="popup__button_card-add"
+              data-translate="common.saveBtn"></button>
+          </form>
+        </section>
+        <section class="popup popup_with-confirmation" id="popup_with-confirmation">
+          <form class="popup__form popup__form_with-confirmation" id="popup__form_with-confirmation" novalidate>
+            <picture>
+              <source media="(max-width: 580px)" srcset="<%= require(`../images/close_icon_small.svg`)%>" />
+              <img src="<%= require(`../images/close_icon.svg`)%>" alt="#"
+                class="popup__closed-btn popup__closed-btn_with-confirmation" id="popup_with-confirmation__closed-btn"
+                data-translate="common.closeIcon" />
+            </picture>
+            <h2 class="popup__heading popup__heading_with-confirmation" id="popup__heading_with-confirmation"></h2>
+            <button type="submit" class="popup__button popup__button_with-confirmation"
+              id="popup__button_with-confirmation"></button>
+          </form>
+        </section>
+        <section class="img-popup-card" id="img-popup-card">
+          <div class="img-popup-card__container" id="img-popup-card__container">
+            <picture>
+              <img type="url" src="#" alt="#" class="img-popup-card__image" />
+            </picture>
+            <h2 class="img-popup-card__title"></h2>
+            <picture>
+              <source media="(max-width: 580px)" srcset="<%= require(`../images/close_icon_small.svg`)%>" />
+              <img src="<%= require(`../images/close_icon.svg`)%>" alt="#" class="img-popup-card__closed-btn"
+                id="img-popup-card__closed-btn" data-translate="common.closeIcon" />
+            </picture>
+          </div>
+        </section>
+        <section class="cards"></section>
+        <section id="infoTooltip-container"></section>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </div>
+
+  <template id="cards-template">
+    <section class="cards">
+      <ul class="card">
+        <picture>
+          <img src="<%= require(`../images/trash_icon.svg`)%>" alt="#" data-translate="card.trashIconAlt"
+            class="button-trash-icon" id="button-trash-icon" />
+        </picture>
+        <picture>
+          <img src="#" alt="#" class="card__image" />
+        </picture>
+        <li class="card__briefing">
+          <h2 class="card__title"></h2>
+          <div class="card__like-container">
+            <picture>
+              <img src="<%= require(`../images/heart_icon_disabled.svg`)%>" alt="#" class="button-heart-icon"
+                id="button-heart-icon" />
+            </picture>
+            <p class="card__likes"></p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </template>
+
+  <template id="header-template">
+    <div class="header__user-panel">
+      <div class="header__branding">
+        <picture>
+          <source media="(max-width: 608px)" srcset="<%= require('../images/logo_small.svg') %>" />
+          <img src="<%= require('../images/logo.svg') %>" alt="Logo Around The U.S." class="header__logo" />
+        </picture>
+        <div class="header__lang-switch">
+          <span class="header__lang" data-lang="en">EN</span> |
+          <span class="header__lang" data-lang="pt">PT</span>
+        </div>
+      </div>
+      <div class="header__auth">
+        <p id="user-email" class="header__user-email"></p>
+        <p id="auth-status" class="header__auth-status"></p>
+      </div>
+    </div>
+    <div class="header__line"></div>
+  </template>
+
+  <template id="footer-template">
+    <p class="footer__copyrights">&copy; 2023 Around The U.S.</p>
+    <aside class="footer__aside">
+      <div class="footer__social-links">
+        <ul class="footer__list">
+          <li>
+            <a href="https://www.linkedin.com/in/evandrodemelo/" target="_blank" rel="noopener noreferrer">
+              <svg fill="#000000" version="1.1" class="footer__linkedin-icon" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 490.732 490.732"
+                xml:space="preserve">
+                <defs>
+                  <style>
+                    .background {
+                      fill: #545454;
+                    }
+
+                    .icon-color {
+                      fill: #ffffff;
+                    }
+                  </style>
+                </defs>
+                <rect class="background" width="490.732" height="490.732" />
+                <g class="icon-color">
+                  <path d="M472.366,0.003H18.36C8.219,0.003,0,8.222,0,18.363v454.005c0,10.143,8.219,18.361,18.36,18.361h454.012
+                			c10.142,0,18.36-8.219,18.36-18.361V18.363C490.727,8.222,482.507,0.003,472.366,0.003z M130.375,403.808
+                			c0,6.762-5.478,12.238-12.24,12.238H69.132c-6.756,0-12.24-5.477-12.24-12.238V189.625c0-6.763,5.484-12.24,12.24-12.24h49.003
+                			c6.762,0,12.24,5.477,12.24,12.24V403.808z M130.375,127.482c0,6.763-5.478,12.24-12.24,12.24H69.132
+                			c-6.756,0-12.24-5.478-12.24-12.24V83.969c0-6.763,5.484-12.24,12.24-12.24h49.003c6.762,0,12.24,5.477,12.24,12.24V127.482z
+                			 M433.835,403.808c0,6.762-5.483,12.238-12.24,12.238h-49.003c-6.763,0-12.24-5.477-12.24-12.238v-90.436
+                			c0-29.988-1.566-49.383-4.712-58.189c-3.14-8.807-8.237-15.649-15.3-20.526c-7.062-4.884-15.558-7.32-25.496-7.32
+                			c-12.729,0-24.149,3.488-34.26,10.459c-10.11,6.977-17.038,16.211-20.79,27.717c-3.745,11.506-5.618,32.779-5.618,63.807v74.488
+                			c0,6.762-5.483,12.238-12.24,12.238h-49.003c-6.756,0-12.24-5.477-12.24-12.238V189.625c0-6.763,5.483-12.24,12.24-12.24h43.771
+                			c6.763,0,12.24,5.477,12.24,12.24v16.316c0,6.763,3.312,7.852,7.858,2.852c22.864-25.123,50.753-37.687,83.673-37.687
+                			c16.212,0,31.028,2.919,44.455,8.758c13.422,5.838,23.58,13.292,30.466,22.356c6.885,9.063,11.683,19.351,14.382,30.857
+                			c2.699,11.505,4.058,27.98,4.058,49.426V403.808L433.835,403.808z" />
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/evandro-developer" target="_blank" rel="noopener noreferrer">
+              <svg width="32" height="32" viewBox="4 4 24 24" class="footer__github-icon"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="32" height="32" fill="#FFFFFF" />
+                <path
+                  d="M28 1c1.654 0 3 1.346 3 3v24c0 1.654-1.346 3-3 3H4c-1.654 0-3-1.346-3-3V4c0-1.654 1.346-3 3-3h24m0-1H4C1.8 0 0 1.8 0 4v24c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4z"
+                  fill="#FFFFFF" class="color000 svgShape"></path>
+                <path
+                  d="M19.613 25.958h-5.309s.007-1.575 0-2.656c-3.633.782-4.647-1.992-4.647-1.992-.664-1.328-1.328-1.992-1.328-1.992-1.328-.789 0-.664 0-.664 1.328 0 1.992 1.328 1.992 1.328 1.165 1.978 3.238 1.66 3.983 1.328 0-.664.291-1.668.664-1.992-2.9-.327-5.314-1.992-5.314-5.311s.667-3.983 1.33-4.647c-.134-.327-.69-1.537.021-3.319 0 0 1.305 0 2.632 1.992.658-.658 2.656-.664 3.32-.664.663 0 2.661.006 3.318.664 1.328-1.992 2.636-1.992 2.636-1.992.71 1.783.155 2.992.02 3.319.664.664 1.328 1.328 1.328 4.647s-2.411 4.984-5.311 5.311c.374.324.664 1.467.664 1.992l.001 4.648z"
+                  fill="#545454" class="color000 svgShape"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__author-info">
+        <p class="footer__author" data-translate="footer.author"></p>
+        <p class="footer__profession" data-translate="footer.profession"></p>
+      </div>
+    </aside>
+  </template>
+
+  <template id="auth-container-template">
+    <div class="auth">
+      <header class="header"></header>
+      <section class="auth-container">
+        <h2 class="auth-container__title" id="auth-container__title"></h2>
+        <form class="auth-container__form" id="auth-form" novalidate>
+          <label class="auth-container__field">
+            <input class="auth-container__input" type="email" name="email" id="auth-email" required
+              autocomplete="email" />
+            <span class="auth-container__input-error auth-email-error" id="auth-email-error"
+              data-translate="validation.emailRequired"></span>
+          </label>
+          <label class="auth-container__field">
+            <input class="auth-container__input" type="password" name="password" id="auth-password"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{6,100}$" required
+              autocomplete="current-password" minlength="6" maxlength="20" />
+            <span class="auth-container__input-error auth-password-error" id="auth-password-error"></span>
+          </label>
+          <button type="submit" class="button-auth" id="auth-submit-button"></button>
+          <a href="#" class="auth-container__link" id="toggle-auth-route"></a>
+        </form>
+      </section>
+      <footer class="footer"></footer>
+    </div>
+  </template>
+
+  <template id="infoToolTip-template">
+    <div class="infoToolTip">
+      <div class="infoToolTip__container">
+        <img src="" alt="" class="infoToolTip__img" />
+        <p class="infoToolTip__text"></p>
+        <picture>
+          <source media="(max-width: 580px)" srcset="<%= require(`../images/close_icon_small.svg`)%>" />
+          <img src="<%= require(`../images/close_icon.svg`)%>" alt="#" class="infoToolTip__closed-btn"
+            id="infoToolTip__closed-btn" data-translate="common.closeIcon" />
+        </picture>
+      </div>
+    </div>
+  </template>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+.auth-container__form {
+  width: 430px;
+  height: 330px;
+  margin: 0;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .auth-container__form {
+    max-width: 282px;
+    max-height: 282px;
+    padding: 0;
+  }
+}

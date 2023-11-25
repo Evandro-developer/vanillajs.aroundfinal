@@ -1,0 +1,32 @@
+.header__user-email {
+  max-width: 290px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .header__user-email {
+    max-width: 188px;
+  }
+}
+
+@media (max-width: 608px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .header__user-email {
+    padding: 0 0 8px 0;
+  }
+}

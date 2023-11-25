@@ -1,0 +1,24 @@
+.popup__form {
+  padding: 18px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 430px;
+  height: 330px;
+  transition: 0.3s ease-in-out;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .popup__form {
+    max-width: 282px;
+    max-height: 322px;
+  }
+}

@@ -1,0 +1,36 @@
+.header__line {
+  width: 100%;
+  border-bottom: 1px solid #545454;
+  transition: 0.3s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .header__line {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .header__line {
+    max-width: 736px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 608px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .header__line {
+    max-width: 288px;
+    align-self: center;
+  }
+}

@@ -1,0 +1,29 @@
+.button-edit {
+  width: 24px;
+  height: 24px;
+  border-radius: 2px #fff;
+  position: absolute;
+  top: 15px;
+  right: -36px;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+  display: block;
+}
+
+.button-edit:hover {
+  transition: 0.3s ease-in-out;
+  opacity: 0.6;
+}
+
+@media (max-width: 608px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .button-edit {
+    top: 6px;
+    right: -24px;
+    width: 18px;
+    height: 18px;
+  }
+}

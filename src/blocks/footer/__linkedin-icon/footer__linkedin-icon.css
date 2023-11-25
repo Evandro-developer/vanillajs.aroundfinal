@@ -1,0 +1,23 @@
+.footer__linkedin-icon {
+  margin: 0;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+@media (max-width: 608px) {
+  * {
+    transition: 0.3s ease-in-out;
+  }
+  .footer__linkedin-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.footer__linkedin-icon .background,
+.footer__linkedin-icon .icon-color {
+  transition: fill 0s;
+}
